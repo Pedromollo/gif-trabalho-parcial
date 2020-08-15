@@ -58,3 +58,18 @@ function grab_data()
     // data will be loaded by each call's callback
     return;
 }
+
+if(localStorage.tema){
+    document.getElementById('tema').value = localStorage.tema;
+    document.onchange = grab_data();
+
+
+    }
+    
+    var savepes = function(){
+        var tema = document.getElementById('tema').value;
+        localStorage.setItem('tema', tema)
+        
+    }
+    
+    document.onchange = savepes;
